@@ -42,6 +42,10 @@ def get_file_directory():
     """Return an absolute path to the directory that contains this file"""
     return os.path.dirname(_FILE_DIR)
 
+def fonts_dir(font_dir):
+    for fonts in os.listdir(font_dir):
+        if fonts.endswith('.ttf' or ' .otf' or '.fnt'):
+            Font(file=os.path.join(font_dir, fonts))
 
 class Font(tkfont.Font):
     """
